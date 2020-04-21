@@ -63,7 +63,7 @@ else
 ############################################
 echo "copio file su ftp  "
 
-ncftpput -u $FTP_USR -p $FTP_PWD -t 60 $FTP_SERV/ $FTP_DIR/ $NOMEFILE
+ncftpput -u $FTP_USR -p $FTP_PWD -t 60 $FTP_SERV $FTP_DIR $NOMEFILE
 
   STATOcopy=$?
 ## se si sono verificate anomalie (exit status = 1) allora esci ...
