@@ -70,10 +70,10 @@ ncftpput -u $FTP_USR -p $FTP_PWD -t 60 ftp://$FTP_SERV/$FTP_DIR/$NOMEFILE
     if [ "$STATOcopy" -ne 0 ]
     then
       echo "ATTENZIONE: copia file non riuscita"
-      $MYSQL -u $MYSQL_USR -p$MYSQL_PWD -D $MYSQL_DBNAME -h $MYSQL_HOST -e "insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('$ANNO/$MESE/$GIORNO $ORA:$MINUTO:$SECONDO',-10,$NRECORDS,'$NOME','putcsv.sh','`date +%Y/%m/%d" "%H:%M:%S`')"
+      $MYSQL -u $MYSQL_USR -p$MYSQL_PWD -D $MYSQL_DBNAME -h $MYSQL_HOST -e "insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('$ANNO/$MESE/$GIORNO $ORA:$MINUTO:$SECONDO',-10,$NRECORDS,'$NOME','putcsv_to_rem.sh','`date +%Y/%m/%d" "%H:%M:%S`')"
     else
       echo "SUCCESSO: copia file eseguita con successo "
-      $MYSQL -u $MYSQL_USR -p$MYSQL_PWD -D $MYSQL_DBNAME -h $MYSQL_HOST -e "insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('$ANNO/$MESE/$GIORNO $ORA:$MINUTO:$SECONDO',1,$NRECORDS,'$NOME','putcsv.sh','`date +%Y/%m/%d" "%H:%M:%S`')"
+      $MYSQL -u $MYSQL_USR -p$MYSQL_PWD -D $MYSQL_DBNAME -h $MYSQL_HOST -e "insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('$ANNO/$MESE/$GIORNO $ORA:$MINUTO:$SECONDO',1,$NRECORDS,'$NOME','putcsv_to_rem.sh','`date +%Y/%m/%d" "%H:%M:%S`')"
     fi
 fi
 
