@@ -2,6 +2,8 @@
 #
 # 2020-01-31 MR & MS
 ########################################
+export https_proxy="http://proxy2:8080"
+export http_proxy="http://proxy2:8080"
 
 numsec=3600 # 1 ora 
  ./putcsv_to_rem.sh
