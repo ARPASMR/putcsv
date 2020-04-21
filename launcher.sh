@@ -3,14 +3,14 @@
 # 2020-01-31 MR & MS
 ########################################
 
-numsec=600 # 10 minuti 
-
+numsec=3600 # 1 ora 
+ ./putcsv_to_rem.sh
 while [ 1 ]
 do
   if [ $SECONDS -ge $numsec ]
   then
     SECONDS=0
-         ./putcsv.sh
+         ./putcsv_to_rem.sh
          STATO=$?
          echo "STATO USCITA SCRIPT ====> "$STATO
          if [ "$STATO" -gt 0 ] # se si sono verificate anomalie esci 
