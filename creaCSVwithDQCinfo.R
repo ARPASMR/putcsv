@@ -125,7 +125,7 @@ if (lung_q!=1) {
 # e che siano appartenenti alle tipologie di competenza del meteo
 # e che siano misure con marca temporale di almeno 5 ore prima per tempi passaggio staging-consolidata nel rem
 #________________________________________________________
-    query<-paste("select DQCinDBUNICO_dati.IDsensore, DQCinDBUNICO_dati.Data_e_ora, DQCinDBUNICO_dati.Misura, DQCinDBUNICO_dati.Flag_manuale_DBunico, DQCinDBUNICO_dati.Flag_manuale, DQCinDBUNICO_dati.Flag_automatica,DQCinDBUNICO_dati.Autore from DQCinDBUNICO_dati,A_Sensori,A_Stazioni where DQCinDBUNICO_dati.IDsensore=A_Sensori.IDsensore and A_Sensori.IDstazione=A_Stazioni.IDstazione and  DQCinDBUNICO_dati.Misura is not NULL and  DQCinDBUNICO_dati.Flag_manuale_DBunico not in (1,2) and A_Stazioni.IDrete in (1,4) and A_Sensori.NOMEtipologia in ('T','PP','UR','PA','VV','VVP','VVS','DV','DVP','DVS','RG','RN') and DQCinDBUNICO_dati.Data_e_ora < DATE_SUB(NOW(), INTERVAL 5 HOUR) ",sep="")
+    query<-paste("select DQCinDBUNICO_dati.IDsensore, DQCinDBUNICO_dati.Data_e_ora, DQCinDBUNICO_dati.Misura, DQCinDBUNICO_dati.Flag_manuale_DBunico, DQCinDBUNICO_dati.Flag_manuale, DQCinDBUNICO_dati.Flag_automatica,DQCinDBUNICO_dati.Autore from DQCinDBUNICO_dati,A_Sensori,A_Stazioni where DQCinDBUNICO_dati.IDsensore=A_Sensori.IDsensore and A_Sensori.IDstazione=A_Stazioni.IDstazione and  DQCinDBUNICO_dati.Misura is not NULL and  DQCinDBUNICO_dati.Flag_manuale_DBunico not in (1,2) and A_Stazioni.IDrete in (1,4) and A_Sensori.NOMEtipologia in ('T','UR','PA','VV','VVP','VVS','DV','DVP','DVS','RG','RN') and DQCinDBUNICO_dati.Data_e_ora < DATE_SUB(NOW(), INTERVAL 5 HOUR) ",sep="")
     cat ( " query > ", query," \n")
     q <- try(dbGetQuery(conn, query),silent=TRUE)
 #   se la richiesta fallisce allora esci con codice 1
