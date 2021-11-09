@@ -10,7 +10,7 @@ ENV http_proxy=http://${secret}@proxy2.arpa.local:8080/
 RUN apt-get update
 RUN apt-get -y install curl git locales dnsutils openssh-client smbclient procps util-linux build-essential ncftp rsync
 RUN apt-get -y install nfs-common openssl libjpeg-dev libpng-dev libreadline-dev r-base r-base-dev libmariadb-dev
-RUN apt-get -y install -y libpq-dev vim cifs-utils mysql-client
+RUN apt-get -y install -y libpq-dev vim cifs-utils mariadb-client
 RUN R -e "install.packages('RMySQL', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('RPostgreSQL', repos = 'http://cran.us.r-project.org')"
 RUN R -e "install.packages('lubridate', repos = 'http://cran.us.r-project.org')"
