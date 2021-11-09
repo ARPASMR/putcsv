@@ -32,7 +32,7 @@ mm  <-substring(datafile,11,12)
 DATA_ACT<-paste(YYYY,"-",MMM,"-",DD," ",hh,":",mm,sep="")
 file_out<-paste(percorso,'/dqc_feedback_',datafile,'.csv',sep='')
 #validatori<-c("MR","EB","US","LC","MS","CHR","PPA","SDP","MCI","MIC","GC","SGR")
-adqc<-c("aggiornamento_f","DMA-DV.R","DMA-PA.R","DMA-PP.R","DMA-RG.R","DMA-RN.R","DMA-T.R","DMA-UR.R","DMA-VV.R")
+adqc<-c("aggior_ftp","aggiornamento_f","DMA-DV.R","DMA-PA.R","DMA-PP.R","DMA-RG.R","DMA-RN.R","DMA-T.R","DMA-UR.R","DMA-VV.R")
 # log info
 cat("CREA CSV files CON LE info su Data Quality Control ", date()," \n\n")
 print(paste(" data attuale = ",DATA_ACT))
@@ -45,7 +45,7 @@ print(paste("                       file di output = ",file_out,sep=""))
 cat("collegamento al DB...")
 #definisco driver
 drv<-dbDriver("MySQL")
-conn<-try(dbConnect(drv, user=as.character(Sys.getenv("MYSQL_USR")), password=as.character(Sys.getenv("MYSQL_PWD")), dbname=as.character(Sys.getenv("MYSQL_DBNAME")), host=as.character(Sys.getenv("MYSQL_HOST"))))
+conn<-try(dbConnect(drv, user=as.character(Sys.getenv("MYSQL_USR")), password=as.character(Sys.getenv("MYSQL_PWD")), dbname=as.character(Sys.getenv("MYSQL_DBNAME")), host=as.character(Sys.getenv("MYSQL_HOST")),port=as.numeric(Sys.getenv("MYSQL_PORT")) ))
 #____________________________________________________________
 # Richiedi al DB elenco validatori 
 #____________________________________________________________
