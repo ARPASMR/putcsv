@@ -71,7 +71,7 @@ if (inherits(q,"try-error")) {
   # inserisci codice -1 nella tabella DQCinDBUNICO_invio
   print("inserimento di codice StatoInvio=-1 in DQCinDBUNICO_invio")
   insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                DATA_ACT,"',-1,0,'nessuno','creaCSVwithDQCinfo.R','",
+                DATA_ACT,"',-1,0,'nessuno','creaCSV','",
                 toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
      esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
        if (inherits(esecuzione,"try-error")) {
@@ -98,7 +98,7 @@ if (lung_q!=1) {
   # inserisci codice -2 nella tabella DQCinDBUNICO_invio
   print("inserimento di codice StatoInvio=-2 in DQCinDBUNICO_invio")
   insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                DATA_ACT,"',-2,0,'nessuno','creaCSVwithDQCinfo.R','",
+                DATA_ACT,"',-2,0,'nessuno','creaCSV','",
                 toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
      esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
        if (inherits(esecuzione,"try-error")) {
@@ -137,7 +137,7 @@ if (lung_q!=1) {
       # inserisci codice -3 nella tabella DQCinDBUNICO_invio
       print("inserimento di codice StatoInvio=-3 in DQCinDBUNICO_invio")
       insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                    DATA_ACT,"',-3,0,'nessuno','creaCSVwithDQCinfo.R','",
+                    DATA_ACT,"',-3,0,'nessuno','creaCSV','",
                     toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
       esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
        if (inherits(esecuzione,"try-error")) {
@@ -220,7 +220,7 @@ if (lung_q!=1) {
         # inserisci codice -4 nella tabella DQCinDBUNICO_invio
         print("inserimento di codice StatoInvio=-4 in DQCinDBUNICO_invio")
         insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                      DATA_ACT,"',-4,0,'nessuno','creaCSVwithDQCinfo.R','",
+                      DATA_ACT,"',-4,0,'nessuno','creaCSV','",
                       toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
         esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
           if (inherits(esecuzione,"try-error")) {
@@ -268,7 +268,7 @@ if (lung_q!=1) {
       # inserisci codice -5 nella tabella DQCinDBUNICO_invio
       print("inserimento di codice StatoInvio=-5 in DQCinDBUNICO_invio")
       insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                    DATA_ACT,"',-5,0,'nessuno','creaCSVwithDQCinfo.R','",
+                    DATA_ACT,"',-5,0,'nessuno','creaCSV','",
                     toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
         esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
           if (inherits(esecuzione,"try-error")) {
@@ -304,7 +304,7 @@ if (lung_q!=1) {
       # inserisci codice -5 nella tabella DQCinDBUNICO_invio
       print("inserimento di codice StatoInvio=-5 in DQCinDBUNICO_invio")
       insert<-paste("insert into DQCinDBUNICO_invio (DataInvio,StatoInvio,RecordInviati,NomeFile,Autore,Data) values  ('",
-                    DATA_ACT,"',-5,0,'nessuno','creaCSVwithDQCinfo.R','",
+                    DATA_ACT,"',-5,0,'nessuno','creaCSV','",
                     toString(format(Sys.time(), "%Y-%m-%d %H:%M:%S")),"')",sep="")
         esecuzione <- try(dbGetQuery(conn, insert),silent=TRUE)
           if (inherits(esecuzione,"try-error")) {
