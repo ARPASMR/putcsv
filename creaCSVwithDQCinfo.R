@@ -32,7 +32,7 @@ mm  <-substring(datafile,11,12)
 DATA_ACT<-paste(YYYY,"-",MMM,"-",DD," ",hh,":",mm,sep="")
 file_out<-paste(percorso,'/dqc_feedback_',datafile,'.csv',sep='')
 #validatori<-c("MR","EB","US","LC","MS","CHR","PPA","SDP","MCI","MIC","GC","SGR")
-adqc<-c("aggior_ftp","aggiornamento_f","DMA-DV.R","DMA-PA.R","DMA-PP.R","DMA-RG.R","DMA-RN.R","DMA-T.R","DMA-UR.R","DMA-VV.R")
+adqc<-c("aggiorn_ftp","aggior_ftp","aggiornamento_f","DMA-DV.R","DMA-PA.R","DMA-PP.R","DMA-RG.R","DMA-RN.R","DMA-T.R","DMA-UR.R","DMA-VV.R")
 # log info
 cat("CREA CSV files CON LE info su Data Quality Control ", date()," \n\n")
 print(paste(" data attuale = ",DATA_ACT))
